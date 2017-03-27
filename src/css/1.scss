@@ -1,0 +1,41 @@
+@import "header.scss";
+@import "footer.scss";
+@import "content.scss";
+
+html,body{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+}
+html{
+  background-color: #f9f9f8;
+}
+input{
+  outline: none;
+}
+ul,li,ol{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#mainContainer{
+  height: 100%;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 262377 */
+  src: url('//at.alicdn.com/t/font_b57xh2o8oofg8pvi.eot');
+  src: url('//at.alicdn.com/t/font_b57xh2o8oofg8pvi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_b57xh2o8oofg8pvi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_b57xh2o8oofg8pvi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_b57xh2o8oofg8pvi.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family: 'iconfont';
+  font-style: normal;
+}
