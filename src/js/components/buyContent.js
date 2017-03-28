@@ -10,7 +10,10 @@ export default class BuyContent extends React.Component{
 
   render(){
     return(
-        <section className="buyContent">buyContent</section>
+        <section className="buyContent">
+          <header className="buyHeader">购物单</header>
+          <p>buyContent</p>
+        </section>
     )
 
   };

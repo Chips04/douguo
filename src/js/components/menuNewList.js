@@ -1,25 +1,58 @@
 import React from 'react';
+import 'whatwg-fetch';
 
 export default class MenuNewList extends React.Component{
   constructor(){
     super();
     this.state = {
-
+      newList : []
     }
   };
 
   render(){
     return(
-        <section className="">
-          <ul>
-            <li>n一一一一一一一一</li>
-            <li>n二二二二二二二二二恶</li>
-            <li>n三三三三啊</li>
-            <li>n四四四四四十四</li>
-            <li>n呜呜呜呜呜呜呜呜呜</li>
+        <section className="menuNewList">
+          <ul className="newList">
+            {this.state.newList}
           </ul>
         </section>
     )
 
   };
+  componentDidMount(){
+    let that = this;
+    let arr = [];
+
+    fetch('./src/js/components/a.json')
+    .then(function(response){
+      return response.json()
+    }).then(function(json){
+      console.log('parsed json', json.result.recipes);
+      json.result.recipes.map(function (item, i) {
+        var arr2 = [];
+        if(item.major){
+          for(var j=0;j<item.major.length;j++){
+            arr2.push(<span key={-j-1}>{item.major[j].title} </span>);
+          }
+        }
+        if(item.minor){
+          for(var j=0;j<item.minor.length;j++){
+            arr2.push(<span key={j}>{item.minor[j].title} </span>);
+          }
+        }
+        arr.push(
+          <li key={i}>
+            <div><img src={item.thumb_path} /></div>
+            <div>
+              <h5>{item.title}</h5>
+              <div>{arr2}</div>
+            </div>
+          </li>
+        )
+      });
+      that.setState({newList:arr});
+    }).catch(function(ex) {
+      console.log('parsing failed', ex)
+    })
+  }
 }

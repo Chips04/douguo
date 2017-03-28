@@ -10,7 +10,10 @@ export default class CollectContent extends React.Component{
 
   render(){
     return(
-        <section className="collectContent">collectContent</section>
+        <section className="collectContent">
+          <header className="collectHeader">收藏</header>
+          <p>collectContent</p>
+        </section>
     )
 
   };

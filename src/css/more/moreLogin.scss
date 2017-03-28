@@ -1,0 +1,26 @@
+.moreLogin{
+  box-sizing: border-box;
+  border: 1px solid #e2e1df;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9px;
+  p{
+    width: 59px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    text-align: center;
+  }
+  div{
+    width: 9px;
+    height: 14px;
+    margin-right: 18px;
+    img{
+      display: block;
+      width: 9px;
+      height: 14px;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 .headerHeader{
-  background-color: #5b190b;
+  background-color: $mainColor;
   height: 44px;
   width: 100%;
   position: relative;
@@ -61,6 +61,19 @@
       border-radius: 5px;
     }
   }
+}
+
+header{
+  background-color: $mainColor;
+  height: 44px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  line-height: 44px;
+  font-weight: bold;
+}
+.moreHeader{
+  
 }
 
 @keyframes inputShort {

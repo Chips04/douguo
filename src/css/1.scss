@@ -1,6 +1,11 @@
-@import "header.scss";
-@import "footer.scss";
-@import "content.scss";
+$mainColor:#5b190b;
+
+@import "./header.scss";
+@import "./footer.scss";
+@import "./content.scss";
+@import "./moreContent.scss";
+@import "./more/moreLogin.scss";
+@import "./menuHotList.scss";
 
 html,body{
   padding: 0;
@@ -13,6 +18,16 @@ html{
 }
 input{
   outline: none;
+}
+a{
+  text-decoration: none;
+}
+p,h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
+}
+img{
+  border: none;
 }
 ul,li,ol{
   list-style: none;

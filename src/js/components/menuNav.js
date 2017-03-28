@@ -12,10 +12,10 @@ export default class MenuNav extends React.Component{
 
   render(){
     return(
-        <section className="">
+        <section className="menuNav">
           <ul>
-            <li><Link to="/hot">最热</Link></li>
-            <li><Link to="/new">最新</Link></li>
+            <li><Link to="/menu/hot" activeClassName="activeNav">最热</Link></li>
+            <li><Link to="/menu/new" activeClassName="activeNav">最新</Link></li>
           </ul>
         </section>
     )
