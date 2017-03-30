@@ -5,9 +5,16 @@ $mainColor:#5b190b;
 @import "./content.scss";
 @import "./moreContent.scss";
 @import "./more/moreLogin.scss";
+@import "./more/moreShare.scss";
+@import "./more/moreCommon.scss";
+@import "./more/moreLogo.scss";
 @import "./menuHotList.scss";
+@import "./listHeader.scss";
+@import "./listFooter.scss";
+@import "./list.scss";
 
 html,body{
+  color: #333;
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -22,12 +29,13 @@ input{
 a{
   text-decoration: none;
 }
-p,h1,h2,h3,h4,h5,h6{
+p,h1,h2,h3,h4,h5,h6,pre{
   margin: 0;
   padding: 0;
 }
 img{
   border: none;
+  display: block;
 }
 ul,li,ol{
   list-style: none;

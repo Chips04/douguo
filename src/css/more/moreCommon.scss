@@ -1,0 +1,49 @@
+.moreCommon{
+  margin-bottom: 17px;
+  li{
+    p{
+      width: 59px;
+      height: 45px;
+      line-height: 45px;
+      font-size: 14px;
+      text-align: center;
+      color: #333;
+      margin-left: 15px;
+    }
+    div{
+      width: 9px;
+      height: 14px;
+      margin-right: 18px;
+      img{
+        display: block;
+        width: 9px;
+        height: 14px;
+      }
+    }
+  }
+
+  p{
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    color: #999;
+    font-size: 14px;
+    margin-left: 1px;
+  }
+  ul{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #e2e1e0;
+    overflow: hidden;
+    li{
+      box-sizing: border-box;
+      height: 44px;
+      border: 1px solid #e2e1e0;
+      border-top: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

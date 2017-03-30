@@ -1,0 +1,249 @@
+.distList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .listMain{
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+}
+
+.dishImg{
+  width: 100%;
+  height: 220px;
+  margin-bottom: 9px;
+  position: relative;
+  overflow: hidden;
+  span{
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    margin-top: -110px;
+    img{
+      display: block;
+      width: 100%;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .sTitle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    line-height: 35px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+.dishUser{
+  width: 84.375%;
+  height: 43px;
+  margin: 0 auto 13px;
+  display: flex;
+  .dishUserPhoto{
+    width: 35px;
+    height: 35px;
+    margin-top: 8px;
+    margin-right: 8px;
+    position: relative;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    i{
+      display: block;
+      position: absolute;
+      right: -4px;
+      bottom: -4px;
+      width: 16px;
+      height: 16px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .dishUserContent{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    .dishUserContentLeft{
+      p{
+        font-size: 14px;
+        line-height: 29px;
+        height: 29px;
+      }
+      span{
+        display: block;
+        height: 14px;
+        line-height: 14px;
+        font-size: 12px;
+        color: #aaa;
+      }
+    }
+    .dishUserContentRight{
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      align-self: flex-end;
+    }
+  }
+}
+.cookStory{
+  width: 84.375%;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  pre{
+    white-space: pre-wrap;
+    font-family: Microsoft Yahei;
+    font-size: 13px;
+  }
+}
+.major,.minor{
+  width: 84.375%;
+  margin: 0 auto;
+  h5{
+    font-size: 13px;
+    color: #999;
+    font-weight: normal;
+    height: 21px;
+    line-height: 21px;
+    margin-left: 2px;
+  }
+  table{
+    background-color: #fff;
+    border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    font-size: 13px;
+    width: 100%;
+    box-sizing: border-box;
+    td{
+      vertical-align: middle;
+      border: 1px solid #e2e1e0;
+      &.note{
+        color:#afafaf;
+      }
+      &:nth-of-type(1),&:nth-of-type(3){
+        border-right: none;
+        width: 30%;
+        text-align: left;
+        padding: 9px 10px;
+      }
+      &:nth-of-type(2),&:nth-of-type(4){
+        border-left: none;
+        width: 20%;
+        text-align: right;
+        padding: 9px 7px;
+      }
+    }
+
+  }
+}
+.major{
+  margin-bottom: 20px;
+}
+.minor{
+  margin-bottom: 14px;
+}
+.step{
+  width: 84.375%;
+  margin: 0 auto 19px;
+  .stepTitle{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #dfdedb;
+    align-items: flex-end;
+    h5{
+      font-weight: normal;
+      font-size: 13px;
+      color: #999;
+      height: 30px;
+      line-height: 30px;
+    }
+    div{
+      display: flex;
+      height: 21px;
+      line-height: 21px;
+      i{
+        margin: 7px 12px 0 0 ;
+        display: block;
+        width: 8px;
+        height: 10px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      span{
+        font-size: 12px;
+        color: #999;
+      }
+    }
+  }
+  .stepList{
+    box-sizing: border-box;
+    background-color: #fff;
+    border-top: 1px solid #e2e1e0;
+    .stepDetail{
+      box-sizing: border-box;
+      border: 1px solid #e2e1e0;
+      border-top: none;
+      display: flex;
+      justify-content: space-between;
+      p{
+        line-height: 28px;
+        font-size: 13px;
+        flex: 1 1 auto;
+        margin: 6px 0 6px 10px;
+      }
+      div{
+        flex-shrink: 0;
+        margin: 9px 10px;
+        width: 70px;
+        height: 70px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+.tips{
+  width: 84.375%;
+  margin: 0 auto 22px;
+  h5{
+    font-weight: normal;
+    color: #999;
+    height: 23px;
+    line-height: 23px;
+    font-size: 13px;
+  }
+  pre{
+    box-sizing: border-box;
+    border: 1px solid #e2e1e0;
+    background-color: #fff;
+    padding: 7px 10px;
+    line-height: 28px;
+    font-size: 13px;
+    font-family: Microsoft Yahei;
+  }
+}

@@ -10,6 +10,7 @@ import BuyContent from './components/buyContent.js';
 import MoreContent from './components/moreContent.js';
 import MenuHotList from './components/menuHotList';
 import MenuNewList from './components/menuNewList';
+import List from './components/list';
 
 export default class Root extends React.Component{
   render(){
@@ -65,6 +66,7 @@ const r = (
             <Route path="/buy" component={BuyContent}/>
             <Route path="/more" component={MoreContent}/>
           </Route>
+          <Route path="/list/:id" component={List} />
       </Router>
     </Provider>
 

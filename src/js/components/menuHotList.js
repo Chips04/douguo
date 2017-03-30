@@ -1,5 +1,6 @@
 import React from 'react';
 import 'whatwg-fetch';
+import {Link} from 'react-router';
 
 export default class MenuHotList extends React.Component{
   constructor(){
@@ -22,7 +23,6 @@ export default class MenuHotList extends React.Component{
   componentDidMount(){
     let that = this;
     let arr = [];
-
     fetch('./src/js/components/a.json')
     .then(function(response){
       return response.json()
@@ -41,13 +41,15 @@ export default class MenuHotList extends React.Component{
           }
         }
         arr.push(
-          <li key={i}>
-            <div><img src={item.thumb_path} /></div>
-            <div>
-              <h5>{item.title}</h5>
-              <div>{arr2}</div>
-            </div>
-          </li>
+          <Link to={'/list/'+item.cook_id} key={item.cook_id}>
+            <li key={i}>
+              <div><img src={item.thumb_path} /></div>
+              <div>
+                <h5>{item.title}</h5>
+                <div>{arr2}</div>
+              </div>
+            </li>
+          </Link>
         )
       });
       that.setState({hotList:arr});
