@@ -12,6 +12,8 @@ $mainColor:#5b190b;
 @import "./listHeader.scss";
 @import "./listFooter.scss";
 @import "./list.scss";
+@import "./more/login.scss";
+@import "./more/register.scss";
 
 html,body{
   color: #333;
@@ -24,6 +26,7 @@ html{
   background-color: #f9f9f8;
 }
 input{
+  display: block;
   outline: none;
 }
 a{

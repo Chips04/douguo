@@ -36,6 +36,7 @@ class List extends React.Component{
     let minor = null;
     let minorTable = null;
     let stepList = [];
+    let tips = null;
     console.log('componentWillMount')
     fetch('./src/js/components/all.json')
     .then((response) => {
@@ -142,6 +143,13 @@ class List extends React.Component{
               }
             })
           }
+          if(obj.tips !== ""){
+            tips = <div className="tips">
+              <h5>小贴士</h5>
+              <pre>{obj.tips}</pre>
+            </div>
+          }
+
           arr.push(
             <section key="chips" className="listMain">
               <div className="dishImg">
@@ -152,7 +160,7 @@ class List extends React.Component{
               </div>
               <div className="dishUser">
                 <div className="dishUserPhoto">
-                  <img src={obj.author_photo}/>
+                  <img src={obj.author_photo||'src/images/defaultPhoto.png'}/>
                   {verified}
                 </div>
                 <div className="dishUserContent">
@@ -180,10 +188,7 @@ class List extends React.Component{
                   {stepList}
                 </div>
               </div>
-              <div className="tips">
-                <h5>小贴士</h5>
-                <pre>{obj.tips}</pre>
-              </div>
+              {tips}
             </section>
           );
           that.setState({dishTitle:dishTitle});

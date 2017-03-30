@@ -11,6 +11,8 @@ import MoreContent from './components/moreContent.js';
 import MenuHotList from './components/menuHotList';
 import MenuNewList from './components/menuNewList';
 import List from './components/list';
+import Login from './components/more/login.js';
+import Register from './components/more/register.js';
 
 export default class Root extends React.Component{
   render(){
@@ -67,6 +69,8 @@ const r = (
             <Route path="/more" component={MoreContent}/>
           </Route>
           <Route path="/list/:id" component={List} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
       </Router>
     </Provider>
 
