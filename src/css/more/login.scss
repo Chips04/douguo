@@ -94,12 +94,19 @@
     }
 
   }
-  .others>div:nth-of-type(4){
+  .others>a:last-child{
+    background-color: #e9e9d9;
+    width: 90.625%;
+    margin: 0 auto;
+    color: #fff;
+    height: 40px;
+    display: block;
     font-size: 14px;
-    color: #7f402e;
     text-align: center;
     line-height: 40px;
     display: block;
     font-weight: bold;
+    color: #7f402e;
+
   }
 }

@@ -13,17 +13,18 @@ class List extends React.Component{
     }
   }
   render(){
-    console.log('render')
-    console.log(this.state.dish)
+    //console.log('render')
+    //console.log(this.state.dish)
     return(
       <div className="distList">
         <ListHeader dishTitle={this.state.dishTitle}></ListHeader>
         {this.state.dish}
-        <ListFooter></ListFooter>
+        <ListFooter dishID={this.props.params.id}></ListFooter>
       </div>
     )
   }
   componentDidMount(){
+    console.log("sdfsdfdsfdsfdsf",this.props.params.id);
     let that = this;
     let obj = null;
     let arr = [];

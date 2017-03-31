@@ -55,12 +55,42 @@ function changer4(state=true,action){
       return state;
   }
 }
+function changer5(state="记得改",action){
+  switch (action.type) {
+    case 'SETUSERNAME':
+      return action.username
+      break;
+    default:
+      return state;
+  }
+}
+function changer6(state=[],action){
+  switch (action.type) {
+    case 'SETCOLLECT':
+      return action.collect
+      break;
+    default:
+      return state;
+  }
+}
+function changer7(state=[],action){
+  switch (action.type) {
+    case 'SETBUY':
+      return action.buy
+      break;
+    default:
+      return state;
+  }
+}
 
 var reducer = combineReducers({
     weibo: changer1,
     qblog: changer2,
     elephant: changer3,
-    qzone: changer4
+    qzone: changer4,
+    username: changer5,
+    collect: changer6,
+    buy: changer7
 })
 
 function mapStateToProps(state){
@@ -68,8 +98,10 @@ function mapStateToProps(state){
     weibovalue:state.weibo,
     qblogvalue:state.qblog,
     elephantvalue:state.elephant,
-    qzonevalue:state.qzone
-
+    qzonevalue:state.qzone,
+    usernamevalue:state.username,
+    collectvalue:state.collect,
+    buyvalue:state.buy
   }
 }
 
