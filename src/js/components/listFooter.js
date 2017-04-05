@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import Toast from './more/toast';
 import { connect } from 'react-redux';
 import { mapStateToProps, mapDispatchToProps,store } from '../redux/store';
 
@@ -7,6 +8,7 @@ class ListFooter extends React.Component{
   constructor(){
     super();
     this.state={
+      toast : null,
       star : '#fff',
       paper : 'iconfont icon-file'
     }
@@ -36,29 +38,77 @@ class ListFooter extends React.Component{
         buy: newbuy
       })
       //换购物单图标
-      this.setState({paper:'iconfont icon-file_correct'})
+      this.setState({paper:'iconfont icon-file_correct'},() => {
+        this.setState({content:"成功加入购物单"},function(){
+          this.setState({
+            toast : <Toast content={this.state.content}></Toast>
+          })
+          setTimeout(function(){
+            this.setState({
+              toast : null
+            })
+          }.bind(this),1000)
+        });
+      })
     }else{
       this.props.buyvalue.splice(dishIndex,1);
-      this.setState({paper:'iconfont icon-file'})
+      this.setState({paper:'iconfont icon-file'},() => {
+        this.setState({content:"已移除出购物单"},function(){
+          this.setState({
+            toast : <Toast content={this.state.content}></Toast>
+          })
+          setTimeout(function(){
+            this.setState({
+              toast : null
+            })
+          }.bind(this),1000)
+        });
+      })
     }
     console.log("buy  ",store.getState().buy)
   }
   addCollect(){
-    let dishIndex = this.props.collectvalue.indexOf(this.props.dishID);
-    if(dishIndex == -1){
-      let newcollect = this.props.collectvalue;
-      newcollect.push(this.props.dishID);
-      this.props.onChange({
-        type: 'SETCOLLECT',
-        collect: newcollect
-      })
-      //换五角星图
-      this.setState({star:'#f00'})
+    if(!this.props.usernamevalue){
+      window.location.href = "/#/login";
     }else{
-      this.props.collectvalue.splice(dishIndex,1);
-      this.setState({star:'#fff'})
+      let dishIndex = this.props.collectvalue.indexOf(this.props.dishID);
+      if(dishIndex == -1){
+        let newcollect = this.props.collectvalue;
+        newcollect.push(this.props.dishID);
+        this.props.onChange({
+          type: 'SETCOLLECT',
+          collect: newcollect
+        })
+        //换五角星图
+        this.setState({star:'#f00'},() => {
+          this.setState({content:"收藏成功"},function(){
+            this.setState({
+              toast : <Toast content={this.state.content}></Toast>
+            })
+            setTimeout(function(){
+              this.setState({
+                toast : null
+              })
+            }.bind(this),1000)
+          });
+        })
+      }else{
+        this.props.collectvalue.splice(dishIndex,1);
+        this.setState({star:'#fff'},() => {
+          this.setState({content:"取消收藏成功"},function(){
+            this.setState({
+              toast : <Toast content={this.state.content}></Toast>
+            })
+            setTimeout(function(){
+              this.setState({
+                toast : null
+              })
+            }.bind(this),1000)
+          });
+        })
+      }
+      console.log("collect  ",store.getState().collect)
     }
-    console.log("collect  ",store.getState().collect)
   }
   render(){
     return(
@@ -77,9 +127,9 @@ class ListFooter extends React.Component{
             <span>分享</span>
           </li>
         </ul>
+        {this.state.toast}
       </footer>
     )
-
   }
 }
 

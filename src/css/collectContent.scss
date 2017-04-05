@@ -1,0 +1,21 @@
+.coollectList{
+  section>p{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 18px;
+  }
+}
+.collectList{
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  ul{
+    flex: 1 1 auto;
+    padding: 0 3.125%;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
