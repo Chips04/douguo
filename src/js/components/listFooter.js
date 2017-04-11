@@ -69,7 +69,7 @@ class ListFooter extends React.Component{
   }
   addCollect(){
     if(!this.props.usernamevalue){
-      window.location.href = "/#/login";
+      window.location.href = ".\/#\/login";
     }else{
       let dishIndex = this.props.collectvalue.indexOf(this.props.dishID);
       if(dishIndex == -1){

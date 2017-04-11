@@ -125,7 +125,7 @@ class Login extends React.Component{
             setTimeout(function(){
               this.setState({
                 toast : null
-              },()=>{window.location.href="/#/more";})
+              },()=>{window.location.href="./#/more";})
             }.bind(this),1000)
           });
         }

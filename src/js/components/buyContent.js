@@ -323,7 +323,7 @@ class BuyContent extends React.Component{
             </div>
           </header>
           <section>
-            {this.state.otherList}
+            {this.state.mainList}
           </section>
         </div>
       }else{
